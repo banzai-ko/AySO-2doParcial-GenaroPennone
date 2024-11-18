@@ -1,2 +1,2 @@
-ansible-playbook -i hosts.ini install_apache.yml
+ansible-playbook -i ./ansible/hosts.ini ./ansible/install_apache.yml
 

@@ -1,6 +1,6 @@
 ---
 - name:  Apache2 en managed node
-  hosts: desarrollo
+  hosts: managedNode
   become: yes  
   tasks:
     - name: APT update
