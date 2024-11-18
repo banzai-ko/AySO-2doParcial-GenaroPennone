@@ -14,13 +14,14 @@ done
 
 # Reiniciar el servicio SSH para aplicar los cambios
 sudo systemctl restart ssh
+ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Clone Repos
 cd /home/vagrant
 git clone https://github.com/upszot/UTN-FRA_SO_Docker
 git clone https://github.com/banzai-ko/UTN-FRA_SO_onBoarding
 git clone https://github.com/banzai-ko/AySO-Parcial1-GenaroPennone
-git clone git@github.com:banzai-ko/AySO-2doParcial-GenaroPennone.git
+git clone https://github.com/banzai-ko/AySO-2doParcial-GenaroPennone.git
 # Set tools
 sudo apt update
 sudo apt install docker.io docker-compose ansible tree -y
@@ -29,6 +30,8 @@ newgrp docker
 
 # Git Init
 git config --global user.name "banzai.ko"; git config --global user.email "boxko398@gmail.com"
+cd AySO-2doParcial-GenaroPennone
+git remote set-url origin git@github.com:banzai-ko/AySO-2doParcial-GenaroPennone.git
 
 
 echo '>>> Web Access on Port: 80!'
