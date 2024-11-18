@@ -1,0 +1,6 @@
+mkdir -p  2doParcial
+touch puntoa.sh
+touch puntob.sh
+touch puntoc.sh
+mv punto* 2doParcial
+vim Readme.md
