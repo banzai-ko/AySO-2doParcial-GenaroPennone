@@ -15,7 +15,11 @@ Vagrant.configure("2") do |config|
   
   # Define the VM
   config.vm.define :VmWeb do |t|
-    # Add VM-specific settings here if needed
+  
+  # Add VM-specific settings here if needed
+  config.vm.provision "file", source: "../keys/config", destination: "/home/vagrant/.ssh/config"
+  config.vm.provision "file", source: "../keys/banzai-ko.pub", destination: "/home/vagrant/.ssh/banzai-ko.pub"
+  config.vm.provision "file", source: "~/.ssh/banzai/banzai-ko", destination: "/home/vagrant/.ssh/banzai-ko"
   end
 
   # Network settings
