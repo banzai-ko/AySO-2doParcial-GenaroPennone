@@ -8,12 +8,12 @@ Vagrant.configure("2") do |config|
 
   # Sync the folder
   config.vm.synced_folder '.', '/home/vagrant/foo'
-  config.vm.provision "file", source: "../keys/banzai-ko.pub", destination: "/home/vagrant/.ssh/banzai-ko.pub"
+  config.vm.provision "file", source: "../keys/key.pub", destination: "/home/vagrant/.ssh/key.pub"
 
   # Set hostname
   config.vm.hostname = "VmManagedNode"
   config.vm.provision "shell", inline: <<-SHELL
-    cat /home/vagrant/.ssh/banzai-ko.pub >> /home/vagrant/.ssh/authorized_keys
+    cat /home/vagrant/.ssh/key.pub >> /home/vagrant/.ssh/authorized_keys
   SHELL
   # Define the VM
   config.vm.define :VMPruebas do |t|

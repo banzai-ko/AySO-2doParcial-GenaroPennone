@@ -2,4 +2,4 @@ Host github.com
   User banzai.ko
   Hostname github.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/banzai-ko
+  IdentityFile ~/.ssh/key

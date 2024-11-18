@@ -2,9 +2,10 @@
 
 # Controller Node
 cd ../VMs/vagrant_web
-export VAGRANT_EXPERIMENTAL="1"
 vagrant plugin install vagrant-disksize
+export VAGRANT_EXPERIMENTAL="1"
 vagrant up
 
+# MAnaged node
 cd ../managed_node
 vagrant up

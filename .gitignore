@@ -1,2 +1,6 @@
-VMs/keys/banzai-ko
+VMs/keys/key
+VMs/managed_node/.vagrant/bundler
+VMs/vagrant_web/.vagrant
+VMs/vagrant_web/.vagrant/bundler
+VMs/managed_node/.vagrant
 VMs/managed_node/.vagrant/bundler
