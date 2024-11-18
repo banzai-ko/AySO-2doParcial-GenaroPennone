@@ -1,0 +1,42 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.ssh.insert_key = false
+
+  # Select the OS box
+  config.vm.box = "ubuntu/jammy64"
+
+  # Sync the folder
+  config.vm.synced_folder '.', '/home/vagrant/box'
+
+  # Set hostname
+  config.vm.hostname = "VmWeb"
+  
+  # Define the VM
+  config.vm.define :VmWeb do |t|
+    # Add VM-specific settings here if needed
+  end
+
+  # Network settings
+  config.vm.network "private_network", ip: "192.168.56.3"
+  config.vm.network "forwarded_port", guest: 22, host: 8022
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  
+  # Add new disk storage
+  config.vm.disk :disk, size: "10GB", name: "extra_storage"
+  config.vm.disk :disk, size: "10GB", name: "extra_storage2"
+
+
+  # Provider-specific settings
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.name = "VmWeb"
+    vb.cpus = 2
+    vb.linked_clone = true
+  end
+
+  # Provisioning a shell script
+  config.vm.provision "shell", path: "script_Enable_ssh_password.sh"
+end
+

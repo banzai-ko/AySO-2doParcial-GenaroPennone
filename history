@@ -3,4 +3,5 @@ touch puntoa.sh
 touch puntob.sh
 touch puntoc.sh
 mv punto* 2doParcial
-vim Readme.md
+vim Readme.md #Añadir datos personales
+sudo systemctl stop nginx # Desactivar temporalmente servidor web
