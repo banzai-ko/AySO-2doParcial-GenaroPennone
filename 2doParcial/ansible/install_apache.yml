@@ -1,0 +1,20 @@
+---
+- name:  Apache2 en managed node
+  hosts: desarrollo
+  become: yes  
+  tasks:
+    - name: APT update
+      apt:
+        update_cache: yes
+
+    - name: Instalar Apache2
+      apt:
+        name: apache2
+        state: present
+
+    - name: Iniciar el servicio Apache2
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
