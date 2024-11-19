@@ -2,7 +2,7 @@
 
 # Key Generation
 cd ../VMs/keys
-ssh-keygen -t ed25519 -C "boxko398@gmail.com" -f ~/.ssh/key
+ssh-keygen -t ed25519 -C "boxko398@gmail.com" -f key
 
 # Controller Node
 cd ../vagrant_web
